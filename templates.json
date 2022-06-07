@@ -1,0 +1,728 @@
+[
+
+ {
+  "Name": "CGDEV",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/cg/dev",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/pkgcg/dev",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/cgCE/dev,CU:/app/cgCU/dev,D1:/app/cgD1/dev,CC:/app/cgCC/dev",
+   "CODE_PATH=/app/ccms/t2/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGDEV"
+  }
+ },
+
+ {
+  "Name": "CGDEV-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "was_base_9:9.0.5.6",
+  "Env": [
+   "HFS_HOME=/app/cg/dev",
+   "HFS_HOME_PKG=/app/pkgcg/dev",
+   "BATCH_MEMBERS=CE:/app/cgCE/dev,CU:/app/cgCU/dev,D1:/app/cgD1/dev,CC:/app/cgCC/dev",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "CODE_PATH=/app/ccms/t2/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=CGDEV-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGDEV"
+  }
+ },
+
+ {
+  "Name": "CGTP2",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/t2",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/t2",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t2,CU:/app/ccmsCCUK/t2,CC:/app/ccmsCCCH/t2",
+   "CODE_PATH=/app/ccms/t2/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP2"
+  }
+ },
+
+ {
+  "Name": "CGTP2-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "was_base_9:9.0.5.6",
+  "Env": [
+   "HFS_HOME=/app/ccms/t2",
+   "HFS_HOME_PKG=/app/mmpa/t2",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t2,CU:/app/ccmsCCUK/t2,CC:/app/ccmsCCCH/t2",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "CODE_PATH=/app/ccms/t2/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=CGTP2-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP2"
+  }
+ },
+
+ {
+  "Name": "CGTP3",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/t3",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/t3",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t3,CU:/app/ccmsCCUK/t3,CC:/app/ccmsCCCH/t3",
+   "CODE_PATH=/app/ccms/t3/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP3"
+  }
+ },
+
+ {
+  "Name": "CGTP3-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "was_base_9:9.0.5.6",
+  "Env": [
+   "HFS_HOME=/app/ccms/t3",
+   "HFS_HOME_PKG=/app/mmpa/t3",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t3,CU:/app/ccmsCCUK/t3,CC:/app/ccmsCCCH/t3",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "CODE_PATH=/app/ccms/t3/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=CGTP3-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP3"
+  }
+ },
+
+ {
+  "Name": "CGTP4",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/t4",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/t4",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t4,CU:/app/ccmsCCUK/t4,CC:/app/ccmsCCCH/t4",
+   "CODE_PATH=/app/ccms/t4/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP4"
+  }
+ },
+
+ {
+  "Name": "CGTP6",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/t6",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/t6",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/t6,CU:/app/ccmsCCUK/t6,CC:/app/ccmsCCCH/t6",
+   "CODE_PATH=/app/ccms/t6/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "CGTP6"
+  }
+ },
+
+ {
+  "Name": "REL3_D1",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/rel3_d1",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/rel3_d1",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/rel3_d1,CU:/app/ccmsCCUK/rel3_d1,CC:/app/ccmsCCCH/rel3_d1",
+   "CODE_PATH=/app/ccms/t3/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "REL3_D1"
+  }
+ },
+
+ {
+  "Name": "REL3_T1",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/ccms/rel3_t1",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/ccms-batch/src/main/resources/batch",
+   "HFS_HOME_PKG=/app/mmpa/rel3_t1",
+   "APP_ROOT=/mnt/ccms",
+   "PKG_ROOT=/mnt/mmpa",
+   "BATCH_MEMBERS=CE:/app/ccmsCCEU/rel3_t1,CU:/app/ccmsCCUK/rel3_t1,CC:/app/ccmsCCCH/rel3_t1",
+   "CODE_PATH=/app/ccms/rel3_t1/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/app/cg/dev/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "REL3_T1"
+  }
+ },
+
+ {
+  "Name": "SIDEV",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/si/dev",
+   "HFS_HOME_PKG=/app/pkg/dev",
+   "APP_ROOT=/mnt/si",
+   "PKG_ROOT=/mnt/pkg",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/java/src/hr",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/SiDev/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "SIDEV"
+  }
+ },
+ 
+ {
+  "Name": "SIDEV2",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/si/dev2",
+   "HFS_HOME_PKG=/app/pkg/dev",
+   "APP_ROOT=/mnt/si",
+   "PKG_ROOT=/mnt/pkg",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/java/src/hr",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/SiDev/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "SIDEV2"
+  }
+ },
+
+ {
+  "Name": "SITP3-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/si/tp3",
+   "APP_ROOT=/mnt/si",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/java/src/hr",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "SITP3"
+  }
+ },
+
+ {
+  "Name": "SITP4-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/si/tp4",
+   "APP_ROOT=/mnt/si",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/java/src/hr",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "SITP4"
+  }
+ },
+
+ {
+  "Name": "SITP5-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/si/tp5",
+   "APP_ROOT=/mnt/si",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "SITP5"
+  }
+ },
+
+ {
+  "Name": "SIDEV-WAS",
+  "AdminOnly": true,
+  "Project": "sidev",
+  "Image": "was_base_9:9.0.5.6",
+  "Env": [
+   "HFS_HOME=/app/si/dev",
+   "PC_DATA_FOLDER=/mnt/pc_data/java/bin",
+   "JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/8.0/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=SIDEV-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "SIDEV"
+  }
+ },
+
+ {
+  "Name": "DCDEV",
+  "AdminOnly": false,
+  "Project": "dc",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/dc/dev",
+   "BATCH_MEMBERS=D1:/app/dcD1/dev,D2:/app/dcD2/dev,FY:/app/dcFY/dev,FZ:/app/dcFZ/dev,P1:/app/dcP1/dev,SY:/app/dcSY/dev,SZ:/app/dcSZ/dev,UV:/app/dcUV/dev,UH:/app/dc/dev",
+   "APP_ROOT=/mnt/dc",
+   "PC_DATA_FOLDER=/mnt/pc_data/cms/bin",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/dc/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "DCDEV"
+  }
+ },
+
+ {
+  "Name": "DCDEV-WAS",
+  "AdminOnly": true,
+  "Project": "dc",
+  "Image": "was_base_9:9.0.0.9",
+  "Env": [
+   "HFS_HOME=/app/dc/dev",
+   "BATCH_MEMBERS=D1:/app/dcD1/dev,D2:/app/dcD2/dev,FY:/app/dcFY/dev,FZ:/app/dcFZ/dev,P1:/app/dcP1/dev,SY:/app/dcSY/dev,SZ:/app/dcSZ/dev,UV:/app/dcUV/dev,UH:/app/dc/dev",
+   "PC_DATA_FOLDER=/mnt/pc_data/cms/bin",
+   "JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/8.0/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=DCDEV-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "DCDEV"
+  }
+ },
+
+ {
+  "Name": "DCP",
+  "AdminOnly": false,
+  "Project": "dc",
+  "Image": "was_base_9:9.0.0.9",
+  "Env": [
+   "HFS_HOME=/app/dc/p",
+   "BATCH_MEMBERS=FY:/app/dcFY/p,FZ:/app/dcFZ/p,SY:/app/dcSY/p,SZ:/app/dcSZ/p,UV:/app/dcUV/p,UH:/app/dc/p,90:/app/dc90/p",
+   "PC_DATA_FOLDER=/mnt/pc_data/cms/bin",
+   "JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/8.0/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=DCP-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "DCP"
+  }
+ },
+
+ {
+  "Name": "RMDEV",
+  "AdminOnly": false,
+  "Project": "gorm",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/rm/dev",
+   "APP_ROOT=/mnt/gorm",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/goRM/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "RMDEV"
+  }
+ },
+
+ {
+  "Name": "GODEV-EURO",
+  "AdminOnly": false,
+  "Project": "god",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/go/dev",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/batch",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/hr",
+   "APP_ROOT=/mnt/go",
+   "CODE_PATH=/app/go/tp/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "GODEV-EURO"
+  }
+ },
+
+ {
+  "Name": "GOTP",
+  "AdminOnly": false,
+  "Project": "god",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/go/tp",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/batch",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/hr",
+   "APP_ROOT=/mnt/go",
+   "CODE_PATH=/app/go/tp/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "GOTP"
+  }
+ },
+
+ {
+  "Name": "GOP",
+  "AdminOnly": false,
+  "Project": "god",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/go/tp8",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/batch",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/hr",
+   "APP_ROOT=/mnt/go",
+   "CODE_PATH=/app/go/tp8/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "GOP"
+  }
+ },
+
+ {
+  "Name": "GOT1-EURO",
+  "AdminOnly": false,
+  "Project": "god",
+  "Image": "was_liberty:latest",
+  "Env": [
+   "HFS_HOME=/app/go/t1",
+   "BATCH_SHELL_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/batch",
+   "BATCH_RESOURCE_LOCATION=/mnt/pc_data/gotovina-batch/src/main/resources/hr",
+   "APP_ROOT=/mnt/go",
+   "CODE_PATH=/app/go/t1/code/code.tar.gz",
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4liberty:/usr/local/sbin/",
+    "/home:/tmp/home"
+   ]
+  },
+  "Labels": {
+   "Environment": "GOT1-EURO"
+  }
+ },
+
+ {
+  "Name": "GODEV-WAS",
+  "AdminOnly": true,
+  "Project": "god",
+  "Image": "was_base_9:9.0.0.9",
+  "Env": [
+   "HFS_HOME=/app/go/dev",
+   "PC_DATA_FOLDER=/mnt/pc_data/gotovina/bin",
+   "JAVA_HOME=/opt/IBM/WebSphere/AppServer/java/8.0/",
+   "LC_ALL=C.UTF-8",
+   "CENTRALC=GODEV-CENTRAL"
+  ],
+  "HostConfig": {
+   "NetworkMode": "macvlan0",
+   "Binds": [
+    "/mnt/nfs_n42:/app/",
+    "/bin4docker:/usr/local/sbin/",
+    "/home:/tmp/home",
+    "/was_bkp:/was_bkp"
+   ]
+  },
+  "Labels": {
+   "Environment": "GODEV"
+  }
+ }
+]
+
+

@@ -1,0 +1,1203 @@
+[
+
+ {
+  "Name": "CGDEV",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-dev:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/opt/ibm/wlp/usr/shared/apps/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGDEV"
+  }
+ },
+
+ {
+  "Name": "CGDEV-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-dev-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/opt/ibm/wlp/usr/shared/apps/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGDEV"
+  }
+ },
+
+ {
+  "Name": "CGTP2",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp2:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP2"
+  }
+ },
+
+ {
+  "Name": "CGTP2-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp2-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/opt/ibm/wlp/usr/shared/apps/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP2"
+  }
+ },
+
+ {
+  "Name": "CGTP3",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp3:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP3"
+  }
+ },
+
+ {
+  "Name": "CGTP3-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp3-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/",
+   "MDB_ROOT=/opt/ibm/wlp/usr/shared/apps/mdb/",
+   "MDB_SHARED_LIB=fwk,trx,DB2Lib"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP3"
+  }
+ },
+
+ {
+  "Name": "CGTP4",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp4:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP4"
+  }
+ },
+
+ {
+  "Name": "CGTP6",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-cgtp6:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGTP6"
+  }
+ },
+
+ {
+  "Name": "REL3_D1",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-rel3d1:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "REL3_D1"
+  }
+ },
+
+ {
+  "Name": "REL3_T1",
+  "AdminOnly": false,
+  "Project": "ccms",
+  "Image": "hrvestigo/ccms-rel3t1:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/ccms/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "REL3_T1"
+  }
+ },
+
+ {
+  "Name": "SIDEV",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-dev:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/SiDev/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SIDEV"
+  }
+ },
+
+ {
+  "Name": "SIDEV-WAS",
+  "AdminOnly": true,
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-dev-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/SiDev/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SIDEV"
+  }
+ },
+
+ {
+  "Name": "SIDEV2",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-dev2:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/SiDev/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SIDEV2"
+  }
+ },
+
+ {
+  "Name": "SITP",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-tp:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SITP"
+  }
+ },
+
+ {
+  "Name": "SITP2",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-tp2:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SITP2"
+  }
+ },
+
+ {
+  "Name": "SITP3-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-tp3:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SITP3"
+  }
+ },
+
+ {
+  "Name": "SITP4-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-tp4:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SITP4"
+  }
+ },
+
+ {
+  "Name": "SITP5-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "RBA",
+  "Project": "sirius",
+  "Image": "hrvestigo/sirius-tp5:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/sitp/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "SITP5"
+  }
+ },
+
+ {
+  "Name": "DCDEV",
+  "AdminOnly": false,
+  "Project": "dc",
+  "Image": "hrvestigo/vcms-dev:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/dc/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "DCDEV"
+  }
+ },
+
+ {
+  "Name": "DCDEV-WAS",
+  "AdminOnly": true,
+  "Project": "ccms",
+  "Image": "hrvestigo/vcms-dev-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/dc/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "DCDEV"
+  }
+ },
+
+ {
+  "Name": "DCP-WAS",
+  "AdminOnly": false,
+  "Project": "dc",
+  "Image": "hrvestigo/vcms-p-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/dc/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "CGDEV"
+  }
+ },
+
+ {
+  "Name": "GODEV-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "ZABA",
+  "Project": "god",
+  "Image": "hrvestigo/gotovina-deveuro:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "GODEV-EURO"
+  }
+ },
+
+ {
+  "Name": "GODEV-WAS",
+  "AdminOnly": true,
+  "Project": "god",
+  "Image": "hrvestigo/gotovina-deveuro-was:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "10003/tcp": [
+     {
+      "HostPort": "WAS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "GODEV-EURO"
+  }
+ },
+
+ {
+  "Name": "GOTP",
+  "AdminOnly": false,
+  "ExternalGroups": "ZABA",
+  "Project": "god",
+  "Image": "hrvestigo/gotovina-gotp:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "GOTP"
+  }
+ },
+
+ {
+  "Name": "GOP",
+  "AdminOnly": false,
+  "ExternalGroups": "ZABA",
+  "Project": "god",
+  "Image": "hrvestigo/gotovina-gop:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "GOP"
+  }
+ },
+
+ {
+  "Name": "GOT1-EURO",
+  "AdminOnly": false,
+  "ExternalGroups": "ZABA",
+  "Project": "god",
+  "Image": "hrvestigo/gotovina-got1euro:latest",
+  "Env": [
+   "JAVA_HOME=/opt/ibm/java/jre/",
+   "LC_ALL=C.UTF-8",
+   "HEALTH_CHECK_PATH=http://localhost:10000/cash/"
+  ],
+  "HostConfig": {
+   "PortBindings": {
+    "10000/tcp": [
+     {
+      "HostPort": "HTTP_PORT"
+     }
+    ],
+    "10002/tcp": [
+     {
+      "HostPort": "HTTPS_PORT"
+     }
+    ],
+    "7777/tcp": [
+     {
+      "HostPort": "DEBUG_PORT"
+     }
+    ],
+    "9200/tcp": [
+     {
+      "HostPort": "BATCH_PORT"
+     }
+    ],
+    "22/tcp": [
+     {
+      "HostPort": "SSH_PORT"
+     }
+    ]
+   }
+  },
+  "Labels": {
+   "Environment": "GOT1-EURO"
+  }
+ }
+
+]
+
+
